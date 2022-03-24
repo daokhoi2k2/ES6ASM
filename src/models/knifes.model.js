@@ -1,4 +1,4 @@
-import { getDatabase, ref, get, child, set, push, query } from "firebase/database";
+import { getDatabase, ref, get, child, set, push, update, remove } from "firebase/database";
 import database, {dbRef} from "../db.js"
 
 export const getAllKnifes = () => {
@@ -26,7 +26,15 @@ export const addKnife = (data) => {
       console.log("Lỗi", err)
       throw new Error("Lỗi khi thêm sản phẩm vào firebase");
     })
+}
 
+export const updateKnife = async (id, data) => {
+  await update(child(dbRef, `knifes/${id}`), data)
+  return true;
+}
+
+export const deleteKnife = async (id) => {
+  await remove(child(dbRef, `knifes/${id}`));
 }
 
 export const getKnifeById = (id) => {

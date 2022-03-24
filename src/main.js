@@ -1,3 +1,5 @@
+import "toastify-js/src/toastify.css"
+import Toastify from "toastify-js"
 export default class Screen {
   render = async (target, promiseFireBase, callback, additionalRender = "") => {
     const res = await promiseFireBase();
