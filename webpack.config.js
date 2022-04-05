@@ -12,6 +12,11 @@ const config = {
     tables: "./src/tables.js",
     addKnife: "./src/add-knife.js",
     updateKnife: "./src/update-knife.js",
+    products: "./src/products.js",
+    productDetail: "./src/product-detail.js",
+    type: "./src/type.js",
+    cart: "./src/cart.js",
+    checkout: "./src/checkout.js",
   },
   output: {
     // File đầu ra
@@ -51,11 +56,35 @@ const config = {
       filename: "../sign-in.html",
       template: "public/sign-in.html",
       inject: false,
-
+    }),
+    new HtmlWebpackPlugin({
+      filename: "../type.html",
+      template: "public/type.html",
+      inject: false,
+    }),
+    new HtmlWebpackPlugin({
+      filename: "../cart.html",
+      template: "public/cart.html",
+      inject: false,
+    }),
+    new HtmlWebpackPlugin({
+      filename: "../checkout.html",
+      template: "public/checkout.html",
+      inject: false,
     }),
     new HtmlWebpackPlugin({
       filename: "../sign-up.html",
       template: "public/sign-up.html",
+      inject: false,
+    }),
+    new HtmlWebpackPlugin({
+      filename: "../product.html",
+      template: "public/product.html",
+      inject: false,
+    }),
+    new HtmlWebpackPlugin({
+      filename: "../product-detail.html",
+      template: "public/product-detail.html",
       inject: false,
     }),
     new HtmlWebpackPlugin({

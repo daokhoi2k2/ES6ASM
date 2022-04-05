@@ -14,3 +14,17 @@ export const getAllTypes = () => {
       console.error(error);
     });
 };
+
+export const getTypeById = (id) => {
+  return get(child(dbRef, `types/${id}`))
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        return snapshot;
+      } else {
+        throw new Error("No data available");
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};

@@ -263,31 +263,9 @@
         Scrollbar.init(document.querySelector("#sidenav-scrollbar"), options);
       }
     </script>
-    <!-- Github buttons -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="../assets/js/material-dashboard.min.js?v=3.0.0"></script>
     <!--  -->
-    <script>
-      const formRegisterElement = document.querySelector("#form-register");
-      console.log(formRegisterElement);
-      formRegisterElement.onsubmit = (e) => {
-        console.log("submit");
-        e.preventDefault();
-        const email = $("input[name='email']")[0];
-        const password = $("input[name='password']")[0];
-        console.log(validator.isEmail("abc@gmail.com"));
-        axios
-          .get(`http://localhost:4000/users?email=${email.value}`)
-          .then((res) => res.data)
-          .then((data) => {
-            if(data.length > 0) {
-              console.log("Tồn tại");
-            } else {
-              console.log("Không tồn tại");
-            }
-          })
-      };
-    </script>
+    <script src="../script/signIn_bundle.min.js"></script>
   </body>
 </html>

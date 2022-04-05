@@ -13,7 +13,6 @@ tableScreen.render(
   "<option value='-1'>Tất cả</option>"
 );
 
-
 const syncProcess = async () => {
   await tableScreen.render(document.querySelector("#knifes"), getAllKnifes, (knife, key) => {
     return `<tr>
@@ -71,8 +70,6 @@ const syncProcess = async () => {
       await deleteKnife(key);
       e.target.parentNode.parentNode.parentNode.parentNode.remove();
       tableScreen.toast("Xóa sản phẩm thành công!", "success");
-
-      
     })
   )
   
